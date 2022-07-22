@@ -20,8 +20,15 @@ exclude = ["/examples/", "/tests/", "/release.toml"]
 [dependencies]
 futures = "0.3.1"
 juniper = { version = "0.16.0-dev", path = "../juniper", default-features = false }
-rocket = { version = "=0.5.0-rc.2", default-features = false }
+# rocket = { version = "=0.5.0-rc.2", default-features = false }
 serde_json = "1.0.2"
+
+[dependencies.rocket]
+# Temporary patch
+git = "https://github.com/Decarbonify/Rocket.git"
+branch = "acs/diesel-2-patch"
+version = "0.5.0-rc.2"
+default-features = false
 
 [dev-dependencies]
 juniper = { version = "0.16.0-dev", path = "../juniper", features = ["expose-test-schema"] }
